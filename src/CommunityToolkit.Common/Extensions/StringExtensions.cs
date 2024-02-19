@@ -165,4 +165,17 @@ public static class StringExtensions
 
         return value ?? string.Empty;
     }
+
+    /// <summary>
+    /// Counts the number of occurrences of a specified substring within the string.
+    /// </summary>
+    /// <param name="str">The string to search within.</param>
+    /// <param name="substring">The substring to count occurrences of.</param>
+    /// <returns>The number of occurrences of the substring within the string.</returns>
+    public static int CountOccurrences(this string str, string substring)
+    {
+        // Split the string by the substring and count the resulting array length
+        // The length of the array minus 1 gives the number of occurrences
+        return str.Split(new[] { substring }, StringSplitOptions.None).Length - 1;
+    }
 }
